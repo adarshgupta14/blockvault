@@ -44,6 +44,7 @@ const Signin = () => {
       }
     },
     onError: (error) => {
+      setLoading(false);
       toast({
         title: "Signin Error",
         description: error.message,
