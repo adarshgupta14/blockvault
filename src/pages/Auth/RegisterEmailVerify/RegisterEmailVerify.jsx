@@ -33,7 +33,6 @@ const RegisterEmailVerify = () => {
     mutationKey: ["send-verification-mail"],
     mutationFn: sendVerificationMail,
     onSuccess: (data) => {
-      console.log(data);
       setLoading(false)
     },
     onError: (error) => {
@@ -42,6 +41,7 @@ const RegisterEmailVerify = () => {
         description: error.message,
         status: "error",
       });
+      setLoading(false)
     },
     enabled: !!email,
   });

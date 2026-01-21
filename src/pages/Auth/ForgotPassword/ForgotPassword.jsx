@@ -32,7 +32,6 @@ const ForgotPassword = () => {
     mutationKey: ["forgot-email"],
     mutationFn: sendForgotMail,
     onSuccess: (data) => {
-      console.log(data);
       navigate(`/forgot-password-sent/${email}`);
       setLoading(false);
     },
@@ -42,6 +41,7 @@ const ForgotPassword = () => {
         description: error.message,
         status: "error",
       });
+      setLoading(false);
     },
   });
 
